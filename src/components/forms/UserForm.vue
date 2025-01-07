@@ -8,7 +8,7 @@ const props = defineProps<{
 }>()
 
 const id = useId()
-const UserForm = getCurrentInstance()!.type
+const UserForm = getCurrentInstance()!.type as any
 </script>
 
 <template>

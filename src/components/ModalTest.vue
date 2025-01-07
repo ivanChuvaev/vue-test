@@ -3,15 +3,15 @@ import { ModalConfigType, modalStore } from '@/stores/modal-store';
 import { getCurrentInstance } from 'vue';
 import ColorBox from './ColorBox.vue';
 
-  const element = getCurrentInstance()!.type;
+  const ModalTest = getCurrentInstance()!.type as any;
 </script>
 
 <template>
 <div class="modal-test">
   <div class="modal-test-grid">
-    <button @click="() => modalStore.open({ type: ModalConfigType.RAW, component: element })">raw modal</button>
-    <button @click="() => modalStore.open({ type: ModalConfigType.SIMPLE, component: element })">simple modal</button>
-    <button @click="() => modalStore.open({ type: ModalConfigType.DRAWER, component: element })">drawer modal</button>
+    <button @click="() => modalStore.open({ type: ModalConfigType.RAW, component: ModalTest })">raw modal</button>
+    <button @click="() => modalStore.open({ type: ModalConfigType.SIMPLE, component: ModalTest })">simple modal</button>
+    <button @click="() => modalStore.open({ type: ModalConfigType.DRAWER, component: ModalTest })">drawer modal</button>
   </div>
   <ColorBox class="color-box" color="var(--color-background-soft)" />
 </div>
